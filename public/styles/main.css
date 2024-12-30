@@ -11,12 +11,16 @@ html {
 }
 /* ------------ */
 body {
-  font-family: monospace;
+  font-family: Arial, sans-serif;
   height: 100%;
+  background-color: #f4f4f9;
 }
+/* ------------ */
 h1 {
   width: 100%;
   margin-bottom: 40px;
+  text-align: center;
+  color: #333;
 }
 /* ------------ */
 .container {
@@ -35,46 +39,76 @@ h1 {
 .form {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 80px;
+  grid-template-columns: 1fr 80px;
   grid-column-gap: 10px;
 }
 .form-submit {
   outline: none;
-  border: 1px solid rgb(232, 232, 232);
-  background-color: white;
+  border: 1px solid #e8e8e8;
+  background-color: #4CAF50;
+  color: white;
   border-radius: 5px;
   cursor: pointer;
-  font-family: monospace;
-  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
   line-height: 36px;
+  transition: background-color 0.3s ease;
+}
+.form-submit:hover {
+  background-color: #45a049;
 }
 .form-submit:focus {
-  box-shadow: 0 0 0 0.5px rgb(153, 153, 153);
+  box-shadow: 0 0 0 2px rgba(72, 176, 72, 0.5);
 }
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-bottom: 20px;
+}
+input[type="text"]:focus {
+  border-color: #4CAF50;
+}
+/* ------------ */
 .cards {
   display: flex;
+  flex-direction: column;
   margin: 20px 0;
   width: 100%;
 }
 .card-item {
   width: 100%;
-  padding: 5px 20px 20px;
-  border: 1px solid rgb(232, 232, 232);
+  padding: 20px;
+  border: 1px solid #e8e8e8;
   background-color: white;
   border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .card-info {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .card-activity {
-  line-height: 1.2;
+  line-height: 1.5;
   margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+.card-type, .card-participants {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
 }
 .tag-error {
   width: 100%;
   text-align: center;
+  color: red;
+  font-weight: bold;
 }
 /* ------------ */
 .is-element-hidden {
@@ -93,5 +127,8 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
+  }
+  .card-item {
+    padding: 15px;
   }
 }
